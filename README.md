@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @Udai27
 - 👀 I’m interested in learning new programing languages
-- 🌱 I’m currently learning C language
+- 🌱 I’m currently learning :)
 - 💞️ I’m looking to collaborate with people with good experience in coding
 - 📫 You can reach me at yadavudai384@gmail.com
 
