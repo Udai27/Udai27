@@ -11,11 +11,14 @@ int linearSearch(int arr[], int size, int element)
     }
     return -1;
 }
+
+//When array is sorted binary search is used!!
 int binarySearch(int arr[], int size, int element)
 {
     int low, mid, high;
     low = 0;
     high = size - 1;
+    //Keep searching unitl low and high converges
     while (low <= high)
     {
         mid = (low + high) / 2;
