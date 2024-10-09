@@ -13,7 +13,7 @@ int indDeletion(int arr[],int index,int size){
     {
         return -1;
     }
-    for (int i = index; i < size; i++)
+    for (int i = index; i < size-1; i++)
     {
         arr[i] = arr[i+1];
     }
