@@ -30,7 +30,7 @@ int main()
     int size = 6, element = 56, index = 3;
     display(arr,size);
     indInsertion(arr,element,index,size,6);
-    // size+1;
+    // size+=1;
     // display(arr,size);
      return 0;
 }
