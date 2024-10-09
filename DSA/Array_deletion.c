@@ -8,6 +8,7 @@ void display(int arr[],int size){
     }
     printf("\n");   
 }
+//Code for deletion 
 int indDeletion(int arr[],int index,int size){
     if (index > size)
     {
