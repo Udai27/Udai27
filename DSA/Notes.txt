@@ -1,0 +1,18 @@
+1-> Arrays always come up with a condition that they need continous memory location to be properly implemented.
+
+1.1-> To insert or delete an element from an array we need to shift the remaining elements to fill up the vacant space(in case of deletion) or we need to shift the elements to the right to make space for another one(in case of insertion).
+
+2-> In Linked list elements can be presented at any memory location all we need to do is to maintain the record of their memory address.
+
+2.1-> In Arrays the traversal of elements is easy while it is much more diffuclt in case of linked list on the other hand in linked list the insertion and deletion of elements is way more easy than that of array.
+
+2.1.1-> In array elements can be accessed in constant time,irresepective of their position.
+
+2.1.2-> In linked list we need one extra space for each node as to store the address of next node.Hence we need space to store element as well as to store the address of next node.
+
+2.2-> Linked list can be implemented in C using structures. The structure hence created is of self refrencing type i.e, it refers to itself.
+
+struct Node{
+    int data;
+    struct Node* next;    //Self refrencing structure
+};
