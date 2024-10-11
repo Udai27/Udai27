@@ -16,3 +16,4 @@ struct Node{
     int data;
     struct Node* next;    //Self refrencing structure
 };
+2.3-> The time complexity in traversal of linked list is O(n).
