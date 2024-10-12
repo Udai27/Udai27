@@ -16,4 +16,38 @@ struct Node{
     int data;
     struct Node* next;    //Self refrencing structure
 };
-2.3-> The time complexity in traversal of linked list is O(n).
+
+2.3-> The time complexity in traversalof linked list in O(n).
+
+2.4->Time complexity while entering elements in the linked list.(Time complexity refers to the time taken by the compiler to perform a specific task)
+
+2.4.1->While inserting an element in the beginning of a linked list the time complexity is O(1). As it does not depends on the number of element present in the linked list before .
+
+2.4.1.1-> The process to insert an element in the beginning of linked list is as follows:-
+Step1: Create a node 
+Step2: Point the node at the head of the linked list 
+Step3: Declare the new node as head
+
+{
+struct Node* ptr = (struct Node*) malloc(sizeof(struct Node));
+ptr->next = head;
+head = ptr;
+return head;
+}
+
+2.4.2->While inserting in-between any linked list the time complexity to do this is O(n). As we first need to traverse upto that element andonly after that we can insert the element there.
+
+2.4.2.1-> The process to insert an element in-between any linked list is as follows:-
+Step1: Create a pointer and make it traverse upto the required node at whivh we have to insert the new node
+Step2: Make a new node and point it as required
+
+{
+    struct Node* ptr = (struct Node*) malloc(sizeof(struct Node));
+    ptr->next = p->next; // p is the pointer variable which we had created earlier for traversal
+
+    //In the above step hum n jo hamara pointer variable p tha uske next part ko jo pahale directly next node ko point kar raha tha ab hum n usse new node se point karwa diya h aur ab agle step m  hum p ke next ko ptr pe point karenge 
+
+    p->next = ptr; 
+}
+
+
