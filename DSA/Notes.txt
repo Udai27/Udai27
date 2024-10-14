@@ -53,3 +53,21 @@ Step2: Make a new node and point it as required
 2.4.3->While inserting an element in the end of the list ,first we have to traverse the whole list till ptr->next = NULL As it becomes NULL we can insert the new node there.
 
 2.4.3.1-> The time complexity of this process is O(n) as we need to traverse the whole list first before entering a node there. 
+
+{
+    struct Node* ptr = (struct Node*)malloc(sizeof(struct Node));
+    p->next = ptr;
+    ptr->next = NULL;
+}
+
+2.4.4->To insert a node after a node(i.e, we know the address of that particular node after which we have to add the node) the time complexity in doing this is O(1) as we already know the address so irresepective of the number of nodes present in the linkedList we can done this in a constant time.
+
+{
+    struct Node* ptr = (struct Node*)malloc(sizeof(struct Node));
+    ptr->next = q->next;
+    q->next = ptr;
+
+    //q is the node after which we are adding the new node and it is given there that we know the address of q
+}
+
+2.4.4.1-> The difference between adding a node in-between and adding a node after a node is that in the first case we doesn't know the address of the particular node after which we have to add the node and in the second case we know that address also.So the only difference is there in terms in time complexity of both the algorithms(NOTE:- Here I have only talk about the algorithm and the time complexity in actual coding the code may differ).
