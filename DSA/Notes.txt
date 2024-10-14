@@ -50,4 +50,6 @@ Step2: Make a new node and point it as required
     p->next = ptr; 
 }
 
+2.4.3->While inserting an element in the end of the list ,first we have to traverse the whole list till ptr->next = NULL As it becomes NULL we can insert the new node there.
 
+2.4.3.1-> The time complexity of this process is O(n) as we need to traverse the whole list first before entering a node there. 
