@@ -71,3 +71,40 @@ Step2: Make a new node and point it as required
 }
 
 2.4.4.1-> The difference between adding a node in-between and adding a node after a node is that in the first case we doesn't know the address of the particular node after which we have to add the node and in the second case we know that address also.So the only difference is there in terms in time complexity of both the algorithms(NOTE:- Here I have only talk about the algorithm and the time complexity in actual coding the code may differ).
+
+3-> Deleting the node from the linked list.
+
+3.1-> Deleting the node from the beginning. To do this we simply need to make a pointer variable ptr and make it to point the head .Then we need to point head to the next node and free the ptr as follows:
+
+3.1.2->The time complexity of this process is O(1). As every time we are only deleting the first node and this does not depend upon the number of elements present in the list.
+
+{
+    struct Node* ptr = head;
+    head = head->next;
+    free(ptr);
+}
+
+3.2->Deleting the node in between.
+
+Step1: To do this first we need to make a pointer variable "p" which first traverse to the node one before the node which needs to be deleted(Just usse ek pahele wale node tak traverse karwana h !!).
+Step2: Then make another pointer variable "q" which points as {struct Node* q = p->next;}.(It points to the next of p i.e, the node to be deleted).
+Step3: Now perform as follows:
+
+{
+    struct Node* p = head;
+
+    {//traverse "p" as directed above}
+
+    struct Node* q = p->next;
+    p->next = q->next ;
+    free(q);
+}
+
+3.3-> To delete the last node.
+
+3.3.1-> To perform this one needs to take two pointer variables at the same time("p" & "q") and traverse q till the last node and p just one less than q. Now point p to NULL and make q free.
+
+{
+    p->next = NULL;
+    free(q);
+}
