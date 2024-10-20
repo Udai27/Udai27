@@ -17,6 +17,23 @@ void traversal(struct Node *head)
         ptr = ptr->next;
     } while (ptr != head);
 }
+
+//Function to insert a node in the place of first node 
+struct Node* insertAtFirst(struct Node* head,int data){
+    struct Node* ptr = (struct Node *) malloc(sizeof(struct Node));
+    ptr->data = data;
+    struct Node* p = head->next;
+
+    while (p->next != head)
+    {
+        p = p->next;
+    }
+    //At this point p is pointing to the last node of the circular linked list
+    p->next = ptr;
+    ptr->next = head;
+    head = ptr;
+    return head;
+}
 int main()
 {
     struct Node *head;
@@ -45,5 +62,11 @@ int main()
     fourth->next = head;
 
     printf("Linked list is:\n");
+    traversal(head);
+    head = insertAtFirst(head,10);
+    head = insertAtFirst(head,3);
+    head = insertAtFirst(head,15);
+    head = insertAtFirst(head,24);
+    printf("After perfroming insertion the linked list is \n");
     traversal(head);
 }
