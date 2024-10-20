@@ -108,3 +108,27 @@ Step3: Now perform as follows:
     p->next = NULL;
     free(q);
 }
+
+4->Circular linked list
+4.1-> The insertion in a circular linked list is same as doing it in any linked list like the one which we have done earlier above.
+
+Step1=>To start insertion in a circular linked list we have to first create a function of type void and pass the head this time instead of pointer variable ptr.
+
+Step2=>Create a pointer variable ptr and made it point to the head of the linked list.
+
+Step3=>Start a do-while loop this time and traverse the list as done before.
+
+The pesudocode to do all these above steps is as follows:-
+
+void traverse(struct Node* head){
+    struct Node* ptr = head;
+    do
+    {
+        printf("Element is %d\n", ptr->data);
+        ptr = ptr->next;
+    } while (ptr != head);
+
+}
+Here we have used do-while loop instead of a while loop because in while loop every time you run any condition it leaves the last node which is pointing to the head again and in do-while loop instead of the above condition if you use (ptr->next != head) it also leaves the last node without traversing it. So it is best optimised to the above given condition(ptr != head).
+
+By any chance if you use this condition with while loop it doesn't start the loop as the ptr always points to the head and you have to forcefully start the loop but as do while loop exectues atleast one time during the execution it will automatically serves the purpose.
