@@ -132,3 +132,13 @@ void traverse(struct Node* head){
 Here we have used do-while loop instead of a while loop because in while loop every time you run any condition it leaves the last node which is pointing to the head again and in do-while loop instead of the above condition if you use (ptr->next != head) it also leaves the last node without traversing it. So it is best optimised to the above given condition(ptr != head).
 
 By any chance if you use this condition with while loop it doesn't start the loop as the ptr always points to the head and you have to forcefully start the loop but as do while loop exectues atleast one time during the execution it will automatically serves the purpose.
+
+5->In doubly linked list we can traverse in both directions but this traversal in both directions comes with a cost of extra memory space for the prev pointer.
+
+5.1->To create a doubly linked list one can do it as follows:-
+
+struct Node{
+    int data; // A integer data type to store the data of the node
+    struct Node* next; // This pointer points to the next node of the linked list
+    struct Node* prev; // This pointer points to the previous node of the linked list
+}
