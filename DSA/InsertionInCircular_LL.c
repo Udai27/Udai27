@@ -7,6 +7,7 @@ struct Node
     struct Node *next;
 };
 
+//Function to traverse the circular linked list using the do-while loop
 void traversal(struct Node *head)
 {
     struct Node *ptr = head;
