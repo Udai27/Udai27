@@ -86,6 +86,7 @@ int main()
 
 
     //Making this array more user friendly by allowing user to create an array of their required size
+    s.top = -1;
     s.arr = (int *)malloc(s.size * sizeof(int));
     printf("Enter the size of array: ");
     scanf("%d",&s.size);
