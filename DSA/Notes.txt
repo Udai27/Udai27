@@ -142,3 +142,35 @@ struct Node{
     struct Node* next; // This pointer points to the next node of the linked list
     struct Node* prev; // This pointer points to the previous node of the linked list
 }
+
+6->Stack:-Stack is a ADT type of data structure i.e it is not a primary type of data structure it is created using the primary data structures like structure and arrays . (Here ADT refers to Abstract data type) 
+
+6.1-> Stack follows LIFO principal (means Last in first out) it has certain basic operations like push to inset element , pop to remove element out of it and some others features like isFull and isEmpty to check condtions whether stack is full or empty before doing operations mentioned above.
+
+6.2-> To use these features we first need to code them in the compiler and then we can use them.They goes like:
+
+[Writing pesudocode here not the full code]
+
+//function to push element in stack
+Push(stack s, data){
+    isFull(s){
+        if returned 1 i.e stack is full element can't be inserted in the stack.
+        else {
+            top++;
+            s.top = data;
+        }
+    }
+}
+
+//Function to pop element from the stack
+Pop(stack s){
+    isEmpty(s){
+        if returned 1 i.e stack is already empty
+        else {
+            data = s.top
+            top--;
+        }
+    }
+}
+
+And for other operations they can be done directly using the loops and pointer and hence not mentioning them here.
