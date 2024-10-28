@@ -143,7 +143,7 @@ struct Node{
     struct Node* prev; // This pointer points to the previous node of the linked list
 }
 
-6->Stack:-Stack is a ADT type of data structure i.e it is not a primary type of data structure it is created using the primary data structures like structure and arrays . (Here ADT refers to Abstract data type) 
+6->Stack:-Stack is a ADT type of data structure i.e it is not a primary type of data structure it is created using the primary data structures like structure,linked list and arrays . (Here ADT refers to Abstract data type) 
 
 6.1-> Stack follows LIFO principal (means Last in first out) it has certain basic operations like push to inset element , pop to remove element out of it and some others features like isFull and isEmpty to check condtions whether stack is full or empty before doing operations mentioned above.
 
@@ -174,3 +174,31 @@ Pop(stack s){
 }
 
 And for other operations they can be done directly using the loops and pointer and hence not mentioning them here.
+
+6.3-> Stacktop is a function which when called returns the topmost value(element) of the stack.It is defined as follows:-
+
+{
+    //For stack top
+    return s->arr[s->top];
+}
+
+6.4-> Stackbottom is a function which when called returns the bottom value(element) of the stack.It is defined as follows:-
+
+{
+    //For stack bottom
+    return s->arr[0];
+}
+
+6.5-> The time complexity in both the cases is O(1).
+
+6.5.1-> All the operations in stack when implemented using arrays has time complexity of O(1) as they are completed in a constant time irresepective of the size of the array.
+
+6.6-> Linked list can also be used to implement stack and in this case the leftmost side is used for the insertion and deletion operations and also for the others operations as in this case the time complexity is O(1).
+
+6.6.1->We need to set head as top before using the linked list as stack.
+
+6.6.2->Here stack empty condition is when top == NULL.
+
+6.6.3->Theoritically here the stack never becomes full as we can add as many nodes in the linked list we wants but in real world scenario it becomes full when the heap memory becomes exhausted as we are dynamically allocating the memory.
+
+6.6.4->For our convience we can set the custom size of our stack.
