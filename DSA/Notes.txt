@@ -202,3 +202,14 @@ And for other operations they can be done directly using the loops and pointer a
 6.6.3->Theoritically here the stack never becomes full as we can add as many nodes in the linked list we wants but in real world scenario it becomes full when the heap memory becomes exhausted as we are dynamically allocating the memory.
 
 6.6.4->For our convience we can set the custom size of our stack.
+
+7-> Queue => Queue is a type of an abstract data type which can be implemented in various ways such as by using arrays , linked list and also by using other ADTs like stack
+
+7.1-> Queue follows FIFO principal(First In first Out).
+
+7.2-> It has certain basic operations like 
+1.enqueue 
+2.dequeue
+3.first val(to find the first value of the queue)
+4.last val(to find the last value of the queue)
+
