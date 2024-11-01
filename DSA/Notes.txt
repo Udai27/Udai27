@@ -213,3 +213,15 @@ And for other operations they can be done directly using the loops and pointer a
 3.first val(to find the first value of the queue)
 4.last val(to find the last value of the queue)
 
+7.3->To insert an element in the queue we first need to make a pointer 'back' which initially points at -1 and as we insert element in the queue it increments +1 to the next position and inserts the new element there.This process is completed in O(1) time complexity.
+
+7.4->To delete an element from the queue it needs to be done from the beginning of the queue i.e, position 0. and then shifts all the subsequent elements to the left to fill the vacant space.This process is completed in O(n) time complexity.
+
+7.4.1->To remove the element we first need to increase the frontInd by 1 and the delete the element present at that particular position .
+
+7.5->Here while implementing queue we have to maintain two pointers frontInd and backInd which we need to update while inserting and deleting element from the queue
+(Inserting = enqueue && Deleting  = dequeue).
+
+7.5.1->The queue becomes empty when both the frontInd and backInd becomes equal i.e, frontInd = backInd.
+
+7.5.2->The queue becomes full when backInd is equals to (size-1) i.e, backInd = size - 1.
