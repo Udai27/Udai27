@@ -225,3 +225,63 @@ And for other operations they can be done directly using the loops and pointer a
 7.5.1->The queue becomes empty when both the frontInd and backInd becomes equal i.e, frontInd = backInd.
 
 7.5.2->The queue becomes full when backInd is equals to (size-1) i.e, backInd = size - 1.
+
+7.6->The enqueue operation code goes like this:-
+
+void enqueue(struct Queue *q, int val)
+{
+    if (!isFull(q))
+    {
+        q->r = q->r + 1;
+        q->arr[q->r] = val;
+    }
+    else
+    {
+        printf("Queue is full\n");
+    }
+}
+Note :- Here we are first checking if the queue is full or not and then we are pushing elements in it. This can also be implemented as:-
+
+void enqueue(struct Queue *q, int val)
+{
+    if (isFull(q))
+    {
+        printf("Queue is full\n");
+    }
+    else
+    {
+        q->r = q->r + 1;
+        q->arr[q->r] = val;
+    }
+}
+Both the cases are same having no major difference between them but for the convience it has been mentioned here.
+
+7.7->The dequeue operation code goes like this:-
+
+int dequeue(struct Queue *q)
+{
+    int a = -1;
+    if (!isEmpty(q))
+    {
+        q->f++;
+        a = q->arr[q->f];
+    }
+    else
+    {
+        printf("Queue is empty\n");
+    }
+    return a;
+}
+
+7.8->The traversal code for queue is as follows:-
+
+void traversal(struct Queue*q){
+    int i = 0;
+    while (i <= q->r)
+    {
+        printf("%d\t",q->arr[i]);
+        i++;
+    }
+    printf("\n");
+    
+}
