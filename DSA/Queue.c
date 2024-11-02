@@ -54,6 +54,16 @@ int dequeue(struct Queue *q)
     return a;
 }
 
+void traversal(struct Queue*q){
+    int i = 0;
+    while (i <= q->r)
+    {
+        printf("%d\t",q->arr[i]);
+        i++;
+    }
+    printf("\n");
+    
+}
 int main()
 {
     struct Queue q;
@@ -68,6 +78,7 @@ int main()
     enqueue(&q, 15);
     enqueue(&q, 50);
     enqueue(&q, 1);
+    traversal(&q);
     int element = dequeue(&q);
     printf("%d\n",element);
     return 0;
