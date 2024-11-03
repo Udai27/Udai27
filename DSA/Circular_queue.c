@@ -60,6 +60,16 @@ int dequeue(struct circularQueue *q)
     return val;
 }
 
+void traversal(struct circularQueue* q){
+    int i = 0;
+    while (i <= q->r)
+    {
+        printf("%d\t",q->arr[i]);
+        i++;
+    }
+    printf("\n");
+    
+}
 int main()
 {
     struct circularQueue q;
@@ -70,9 +80,13 @@ int main()
     enqueue(&q, 17);
     enqueue(&q, 14);
     enqueue(&q, 5);
+    // traversal(&q);
     dequeue(&q);
     dequeue(&q);
     int element  = dequeue(&q);
     printf("Element dequeued %d\n",element);
+    traversal(&q);
     return 0;
 }
+
+//Traversal code is not working properly Needs improvement..
