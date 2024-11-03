@@ -282,6 +282,13 @@ void traversal(struct Queue*q){
         printf("%d\t",q->arr[i]);
         i++;
     }
-    printf("\n");
-    
+    printf("\n");  
 }
+
+8-> Circular Queue : In circular queue we increment circularly i.e i = (i+1)%size in this way we can increment circularly it follows like this 
+eg: for an array of size 5 the indexation goes from 0 to 4 and the increment goes like this : i = (0+1)%5 => 1
+                                                                                              i = (1+1)%5 => 2
+                                                                                              i = (2+1)%5 => 3
+                                                                                              i = (3+1)%5 => 4
+                                                                                              i = (4+1)%5 => 0
+This means as we reach the last index of the array i.e 4 and after incrementing from there the value of i now points to the starting of the array and hence now the array is circular in nature. And hence circular queue can be deployed by using this concept.
