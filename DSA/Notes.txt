@@ -292,3 +292,67 @@ eg: for an array of size 5 the indexation goes from 0 to 4 and the increment goe
                                                                                               i = (3+1)%5 => 4
                                                                                               i = (4+1)%5 => 0
 This means as we reach the last index of the array i.e 4 and after incrementing from there the value of i now points to the starting of the array and hence now the array is circular in nature. And hence circular queue can be deployed by using this concept.
+
+8.1->The isFull condition for circular queue is (q->r + 1)%q->size == q->f .It means on circularly incrementing the rear index if it becomes equal to the front index then the circular queue is full 
+
+int isFull(struct circularQueue *q)
+{
+    if ((q->r + 1) % q->size == q->f)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+8.2->The isEmpty condition of circular queue is same as the linear queue i.e when both the rear and front index of the queue are equal.
+
+int isEmpty(struct circularQueue *q)
+{
+    if (q->f == q->r)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+8.3->The enqueue operation for the circular queue is as follows 
+
+void enqueue(struct circularQueue *q, int val)
+{
+    if (isFull(q))
+    {
+        printf("Queue is full\n");
+    }
+    else
+    {
+        q->r = (q->r + 1) % q->size;
+        q->arr[q->r] = val;
+    }
+}
+
+In this method we are first checking wether the queue is full or not and after that we are adding the element in the queue using the above given method.
+
+8.4->The dequeue operation is also same as the one which we had done earlier in the queue 
+
+int dequeue(struct circularQueue *q)
+{
+    int val = -1;
+    if (isEmpty(q))
+    {
+        printf("Queue is empty\n");
+    }
+    else
+    {
+        q->f = (q->f + 1) % q->size;
+        val = q->arr[q->f];
+    }
+    return val;
+}
+
+Also here we are first checking whether the queue is empty or not and then dequeueing the element from it.
