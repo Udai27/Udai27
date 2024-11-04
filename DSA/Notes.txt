@@ -404,3 +404,12 @@ int dequeue()
     return val;
 }
 
+NOTE:> DEQueue(Double Ended Queue) is done later on and now moving on Sorting Algorithm......[Video number 47 of the playlist]
+
+11->Sorting Algorithms => We had to choose the algorithm with best time and space complexity for sorting purpose 
+
+NOTE: Inplace sorting-> uses constant space for producing the output[In this method the space required by the algorithm does not depend on the input provided i.e it takes the same space for 5 inputs and also the same space for 500k inputs that is the constant space.]
+
+11.1-> The algorithm used must be stable E.g:> for an array with numbers 6,4,1,2,6 the output must be 1,2,4,6,6 and in this output the 6 occuring in the first place must be occured first in the output that is it must maintain the internal order for same values while sorting.
+
+11.2->The algorithm must be adaptive i.e it should take less time for the already sorted data.
