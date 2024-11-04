@@ -285,7 +285,7 @@ void traversal(struct Queue*q){
     printf("\n");  
 }
 
-8-> Circular Queue : In circular queue we increment circularly i.e i = (i+1)%size in this way we can increment circularly it follows like this 
+8-> Circular Queue using Array : In circular queue we increment circularly i.e i = (i+1)%size in this way we can increment circularly it follows like this 
 eg: for an array of size 5 the indexation goes from 0 to 4 and the increment goes like this : i = (0+1)%5 => 1
                                                                                               i = (1+1)%5 => 2
                                                                                               i = (2+1)%5 => 3
@@ -356,3 +356,51 @@ int dequeue(struct circularQueue *q)
 }
 
 Also here we are first checking whether the queue is empty or not and then dequeueing the element from it.
+
+9->Circular queue using Linked list
+
+9.1->The isFull condition for this is if n == NULL then the queue is full where n is the pointer created to insert the new node in the queue.The enqueue operation follows as below:
+
+void enqueue(int val)
+{
+    struct Node *n = (struct Node *)malloc(sizeof(struct Node));
+    if (n == NULL)
+    {
+        printf("Queue is full\n");
+    }
+    else
+    {
+        n->data = val;
+        n->next = NULL;
+        if (f == NULL)
+        {
+            f = r = n;
+        }
+        else
+        {
+            r->next = n;
+            r = n;
+        }
+    }
+}
+
+9.2->The isEmpty condition for this case is when the f pointer points to NULL.
+The dequeue operation follows as below:
+
+int dequeue()
+{
+    struct Node *ptr = f;
+    int val = -1;
+    if (f == NULL)
+    {
+        printf("Queue is empty\n");
+    }
+    else
+    {
+        f = f->next;
+        val = ptr->data;
+        free(ptr);
+    }
+    return val;
+}
+
