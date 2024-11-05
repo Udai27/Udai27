@@ -413,3 +413,113 @@ NOTE: Inplace sorting-> uses constant space for producing the output[In this met
 11.1-> The algorithm used must be stable E.g:> for an array with numbers 6,4,1,2,6 the output must be 1,2,4,6,6 and in this output the 6 occuring in the first place must be occured first in the output that is it must maintain the internal order for same values while sorting.
 
 11.2->The algorithm must be adaptive i.e it should take less time for the already sorted data.
+
+11.3->Bubble sort : In bubble sort we compare two adjacent indices and check for the greater number and the swap the values accordingly.
+for e.g; 7,11,9,2,17,4
+
+1st pass :-
+    0   1   2   3   4   5
+
+    7   11  9   2   17  4       0,1
+    7   9   11  2   17  4       1,2
+    7   9   2   11  17  4       2,3
+    7   9   2   11  17  4       3,4
+    7   9   2   11  4   17      4,5
+in the first pass the greatest element i.e 17 comes to the rightmost position in the array and it takes 5 comparisons for this and 5 possibile swaps 
+
+2nd pass :-
+    0   1   2   3   4   5
+
+    7   9   2   11  4   17      0,1
+    7   2   9   11  4   17      1,2
+    7   2   9   11  4   14      2,3
+    7   2   9   4   11  17      3,4
+in this pass we don't need to compare the index 4,5 as 17 the greatest element is already at it's place and now 11 is also in it's right place
+
+3rd pass :-
+    0   1   2   3   4   5
+
+    2   7   9   4   11  17      0,1
+    2   7   9   4   11  17      1,2
+    2   7   4   9   11  17      2,3
+now in the 3rd pass we have done 3 comparisons 
+
+4th pass :-
+    0   1   2   3   4   5   
+
+    2   7   4   9   11  17      0,1
+    2   4   7   9   11  17      1,2
+only 2 comparisons have been made here
+
+5th pass :-
+    0   1   2   3   4   5
+
+    2   4   7   9   11  17      0,1
+only 1 comparison have been done i.e 0,1 as all the elements are already in there place 
+
+NOTE:- 1->In Bubble sort the number of passes required for the complete sorting is n-1 where 'n' is the number of element present in the array.
+
+       2->The number of comparisons and possible swaps keep going decreasing in the successive passes.
+
+       3->The total number of comparisons made in the whole sorting is n(n-1)/2 and the time complexity for this sorting is O(n^2)[while calculating time complexity we always take into account the worst case scenario]
+
+       4->The bubble sort is a stable sorting algorithm as it maintains the same order in the output as given in the input array.
+
+       5->It's not a recurssive algorithm.
+
+       6->Bubble sort by default is not an adaptive algorithm i.e it does not take advantage of already sorted data. Whenever it encounters any data it goes for the comparisons.But we can make it adaptive by imposing certain conditions and restrictions while coding the algorithm.
+
+11.4->In bubble sort code we first initialise two for loops one for the passes and one for the comparisons and possible swaps.
+
+11.4.1->The first for loop initialise from 0 and goes upto n-1(n = Number of elements).
+      ->Inside this loop the second for loop goes from 0 to n-1-i that is for the comparisons as the comparisons in each pass decreases.
+
+void bubblesort(int *a, int n)
+{
+    int temp;
+    for (int i = 0; i < n - 1; i++)// loop for number of passes
+    {
+        for (int j = 0; j < n - 1 - i; j++)// loop for comparisons
+        {
+            if (a[j] > a[j + 1]) //comparing the two adjacent numbers
+            {
+                // swapping the numbers if they are not sorted
+
+                temp = a[j]; 
+                a[j] = a[j + 1];
+                a[j + 1] = temp;
+            }
+        }
+    }
+}
+
+11.4.2->The above code is improvised so that it took less number of passes and comparisons if the array is already sorted and hence comes with a better time complexity.
+
+The improvised code is  :=
+
+void bubblesort(int *a, int n)
+{
+    int temp;
+    int isSorted = 0;
+    for (int i = 0; i < n - 1; i++)
+    {
+        printf("Number of pass %d\n", i + 1);
+        isSorted = 1;
+        for (int j = 0; j < n - 1 - i; j++)
+        {
+            if (a[j] > a[j + 1])
+            {
+                temp = a[j];
+                a[j] = a[j + 1];
+                a[j + 1] = temp;
+                isSorted = 0;
+            }
+        }
+        if (isSorted)
+        {
+            return;
+        }
+    }
+}
+
+It has a variable isSorted which has been initialise as zero and changes its value only if the data is sorted otherwise retains its original value as 0 and sort the array further.
