@@ -145,7 +145,7 @@ struct Node{
 
 6->Stack:-Stack is a ADT type of data structure i.e it is not a primary type of data structure it is created using the primary data structures like structure,linked list and arrays . (Here ADT refers to Abstract data type) 
 
-6.1-> Stack follows LIFO principal (means Last in first out) it has certain basic operations like push to inset element , pop to remove element out of it and some others features like isFull and isEmpty to check condtions whether stack is full or empty before doing operations mentioned above.
+6.1-> Stack follows LIFO principle (means Last in first out) it has certain basic operations like push to inset element , pop to remove element out of it and some others features like isFull and isEmpty to check condtions whether stack is full or empty before doing operations mentioned above.
 
 6.2-> To use these features we first need to code them in the compiler and then we can use them.They goes like:
 
@@ -205,7 +205,7 @@ And for other operations they can be done directly using the loops and pointer a
 
 7-> Queue => Queue is a type of an abstract data type which can be implemented in various ways such as by using arrays , linked list and also by using other ADTs like stack
 
-7.1-> Queue follows FIFO principal(First In first Out).
+7.1-> Queue follows FIFO principle(First In first Out).
 
 7.2-> It has certain basic operations like 
 1.enqueue 
@@ -523,3 +523,37 @@ void bubblesort(int *a, int n)
 }
 
 It has a variable isSorted which has been initialise as zero and changes its value only if the data is sorted otherwise retains its original value as 0 and sort the array further.
+
+11.5->Insertion sort : In insertion sort approach we divide the array initially into two parts sorted and unsorted and then we take elements from the unsorted part and place them in the sorted part at appropriate place.
+
+for e.g : in the array 12,54,63,7,20
+Here the two parts are 12 and (54,63,7,20) the first one is sorted part and the other is the unsorted part.
+
+Step1-> Take 54 and compare it with 12 and place it in appropriate place now the sorted part becomes 12,54
+
+step2-> With 63 again compare it with the sorted part,first with the 54 and after placing it the sorted part is 12,54,63
+
+Step3-> While comparing 7 ,first compare it with 63 then with 54 and lastlty with 12 the sorted part now is 7,12,54,63
+
+Step4-> The last element 20 on doing same gives the result 7,12,20,54,63.
+So in this manner we can sort an array based on the insertion sort principle.
+
+The code for this is as follows :
+
+void insertionSort(int *a, int n)
+{
+    int key, j;
+    for (int i = 1; i <= n - 1; i++)
+    {
+        key = a[i];
+        j = i - 1;
+        while (j >= 0 && a[j] > key)
+        {
+            a[j + 1] = a[j];
+            j--;
+        }
+        a[j + 1] = key;
+    }
+}
+
+The first for loop is to take each element for inserting and setting theie value in key and then checking for the required condition.
