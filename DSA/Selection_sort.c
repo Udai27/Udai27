@@ -2,6 +2,7 @@
 
 void printarray(int *a, int n)
 {
+    // printf("Size of array is %d\n",n);
     for (int i = 0; i < n; i++)
     {
         printf("%d ", a[i]);
@@ -37,6 +38,7 @@ void selectionSort(int *a, int n)
     int indexOfMin, temp;
     for (int i = 0; i < n - 1; i++)
     {
+    printf("After %d pass\n",i+1);
         indexOfMin = i;
         for (int j = i + 1; j < n; j++)
         {
