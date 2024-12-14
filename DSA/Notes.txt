@@ -17,7 +17,7 @@ struct Node{
     struct Node* next;    //Self refrencing structure
 };
 
-2.3-> The time complexity in traversalof linked list in O(n).
+2.3-> The time complexity in traversal of linked list in O(n).
 
 2.4->Time complexity while entering elements in the linked list.(Time complexity refers to the time taken by the compiler to perform a specific task)
 
@@ -38,7 +38,7 @@ return head;
 2.4.2->While inserting in-between any linked list the time complexity to do this is O(n). As we first need to traverse upto that element andonly after that we can insert the element there.
 
 2.4.2.1-> The process to insert an element in-between any linked list is as follows:-
-Step1: Create a pointer and make it traverse upto the required node at whivh we have to insert the new node
+Step1: Create a pointer and make it traverse upto the required node at which we have to insert the new node
 Step2: Make a new node and point it as required
 
 {
@@ -408,7 +408,7 @@ NOTE:> DEQueue(Double Ended Queue) is done later on and now moving on Sorting Al
 
 11->Sorting Algorithms => We had to choose the algorithm with best time and space complexity for sorting purpose 
 
-NOTE: Inplace sorting-> uses constant space for producing the output[In this method the space required by the algorithm does not depend on the input provided i.e it takes the same space for 5 inputs and also the same space for 500k inputs that is the constant space.]
+NOTE: Inplace sorting-> uses constant space for producing the output[In this method the space required by the algorithm does not depend on the input provided i.e it takes the same space for 5 inputs and also the same space for 500k inputs, that is the constant space.]
 
 11.1-> The algorithm used must be stable E.g:> for an array with numbers 6,4,1,2,6 the output must be 1,2,4,6,6 and in this output the 6 occuring in the first place must be occured first in the output that is it must maintain the internal order for same values while sorting.
 
@@ -469,10 +469,10 @@ NOTE:- 1->In Bubble sort the number of passes required for the complete sorting 
 
        6->Bubble sort by default is not an adaptive algorithm i.e it does not take advantage of already sorted data. Whenever it encounters any data it goes for the comparisons.But we can make it adaptive by imposing certain conditions and restrictions while coding the algorithm.
 
-11.4->In bubble sort code we first initialise two for loops one for the passes and one for the comparisons and possible swaps.
+11.4->In bubble sort code we first initialise two for-loops one for the passes and one for the comparisons and possible swaps.
 
-11.4.1->The first for loop initialise from 0 and goes upto n-1(n = Number of elements).
-      ->Inside this loop the second for loop goes from 0 to n-1-i that is for the comparisons as the comparisons in each pass decreases.
+11.4.1->The first for-loop initialise from 0 and goes upto n-1(n = Number of elements).
+      ->Inside this loop the second for-loop goes from 0 to n-1-i that is for the comparisons as the comparisons in each pass decreases.
 
 void bubblesort(int *a, int n)
 {
@@ -483,7 +483,7 @@ void bubblesort(int *a, int n)
         {
             if (a[j] > a[j + 1]) //comparing the two adjacent numbers
             {
-                // swapping the numbers if they are not sorted
+                // swapping the numbers as greater number is found on the left side during comparison
 
                 temp = a[j]; 
                 a[j] = a[j + 1];
@@ -607,3 +607,6 @@ void selectionSort(int *a, int n)
 
 ->The outer loop iterates over each element in the array, stopping at (n-1) because the last element will already be in place by the time we finish.
 ->Each pass of the outer loop represents positioning the next smallest element into its correct place in the sorted portion of the array.
+
+11.7-> Quick Sort {TO BE DONE LATER!!!}{Properly samajh nahi aa raha}
+
