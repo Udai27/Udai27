@@ -610,3 +610,103 @@ void selectionSort(int *a, int n)
 
 11.7-> Quick Sort {TO BE DONE LATER!!!}{Properly samajh nahi aa raha}
 
+12-> Binary Tree:
+12.1->A tree is a method or way of representing the data it follows the hierearchial approach 
+
+               5
+              / \
+             7   8
+            / \   \
+          11   9   4
+
+12.2->A tree is a binary tree if its each node have atmost 2 branches(child).
+
+12.3->In binary tree there are few terminologies like:-
+    ->Root: It is a specially designed data item in a tree. The root of tree is it's origin i.e 5 in this case
+    ->Node: Each data item in a tree is called a node.
+    ->Degree of node: The number of subtrees of a node is called its degree {The highest degree of a node is also refereed to as the degree of the tree}
+    ->Leaf node: A node that has no subtree or child is known as leaf node.
+    ->Edge: It is a connecting line drawn from ine node to another node.
+    ->Depth: The depth of a node in a binary tree is the number of edges from the node to the tree's root node.
+    ->Height: The longest path from the leaf node to any node is the height if that node in a binary tree.
+
+12.4->Types of Binary tree:
+    ->Strictly/full/proper binary tree
+    ->Complete binary tree
+    ->Perfect binary tree
+
+12.4.1->Strictly/full/proper binary tree:
+If a tree is having atmost 2 child nodes then it is refereed to as a proper binary tree
+
+12.4.2->Complete binary tree:
+A binary tree is called a complete binary tree if each node of a tree is having exactly 0 or 2 child.
+OR
+If all the nodes of a binary tree are filled except the last node(leaf node) and all the leaf node as as left as possible.
+
+12.4.3->Perfect binary tree:
+A binary tree in which all the leaf node are at a same level and all the non leaf nodes have exactly 2 children is called a perfect binary tree.
+
+12.5->Binary tree implementation:
+
+Step1: Create a structure node having following features.
+
+struct Node
+{
+    int data;
+    struct Node *left, *right;
+};
+
+Here data will store the information of the node and left and right are representing the left and right child of the node
+
+Step2:Ask user for the node and make a recurssive call for the left and right part of that node.
+
+struct Node *create()
+{
+    int x;
+    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
+    printf("Enter data(-1 for no node) ");
+    scanf("%d", &x);
+    if (x == -1)
+        return 0;
+    newNode->data = x;
+    printf("Enter left child of %d\n", x);
+    newNode->left = create();
+    printf("Enter right child of %d\n", x);
+    newNode->right = create();
+}
+
+Step3: Terminate /End 
+
+12.6->There are 3 ways to traverse a binary tree:
+    ->Inorder traversal
+    ->Preorder traversal
+    ->Postorder traversal
+
+12.6.1->Inorder traversal follows the order as (left,root,right)
+
+void inOrder(struct Node* root){
+    if(root == 0) return;
+    inOrder(root->left);
+    printf("%d ",root->data);
+    inOrder(root->right);
+}
+
+12.6.2->Preorder traversal follows the order as (root,left,right)
+
+void preOrder(struct Node *root)
+{
+    if (root == 0)
+        return;
+    printf("%d ", root->data);
+    preOrder(root->left);
+    preOrder(root->right);
+}
+
+12.6.3->Postorder traversal follows the order as (left,right,root)
+
+void postOrder(struct Node* root){
+    if(root == 0) return;
+    postOrder(root->left);
+    postOrder(root->right);
+    printf("%d ",root->data);
+}
