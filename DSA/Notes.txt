@@ -710,3 +710,24 @@ void postOrder(struct Node* root){
     postOrder(root->right);
     printf("%d ",root->data);
 }
+
+12.7->Binary Search Tree(BST):
+12.1->A BST is a special type of binary tree which follows a certain order like all the nodes lesser than the root node(parent node) are to be inserted in the left subtree and all the nodes greater than the root node)(parent node) are to be inserted in the right subtree.
+
+12.2->When a BST is traversed in inoder the resulted data is sorted in ascending order.
+
+12.3->The time complexity of a BST while searching an element is O(log n)
+
+12.4-> A BST
+
+            20
+           /   \
+          17    25
+        /       / \
+       6      23    27
+      / \
+    5    8
+          \
+          10
+          /
+          9
