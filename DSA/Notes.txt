@@ -731,3 +731,55 @@ void postOrder(struct Node* root){
           10
           /
           9
+
+12.8-> Header Node: Sometimes an extra special node ,called a header node is added to the beginning of a tree. When this extra node is used , the tree pointer variable which we will call HEAD(instead of ROOT),will point to the header node and the left pointer of the header node will point to the root of the tree.
+
+    HEAD ->points to the header node
+
+        header node
+        /          \
+    Root node      NULL 
+    and subsequent 
+    tree
+
+
+12.8.1->Threaded Binary Tree:
+A threaded binary tree is a type of binary tree that makes traversal more efficient by making use of otherwise null pointers. These "threads" provide a way to traverse the tree in a specific order (like in-order traversal) without using a stack or recursion. Here's a more detailed look at threaded binary trees:
+
+Key Concepts:
+Threads:
+
+1->In a standard binary tree, many pointers are null, as leaves do not have children.
+
+2->A threaded binary tree uses these null pointers to point to the in-order predecessor or successor of the node.
+
+Types of Threaded Binary Trees:
+
+1->Single-threaded: Only the right null pointers are used to point to the in-order successor.
+
+2->Double-threaded: Both left and right null pointers are used to point to the in-order predecessor and successor, respectively.
+
+12.9-> Height Balanced tree or AVL Tree:
+A tree is perfectly height balanced if the left and right subtrees of any node are at the same height.
+OR
+A tree is height balanced if the differences of the heights of the left and right subtrees of each node are in the range of -1,0,+1
+B.F(Balanced factor) = height of left subtree - height of right subtree.
+
+12.9.1->There are four methods by which a tree can be balanced:-
+1->L-Rotation
+2->R-Rotation
+3->RL-Rotation
+4->LR-Rotation
+
+12.10->B-Tree:
+The B-Tree is a self-balancing search tree commonly used in databases and file systems to maintain sorted data and allow efficient insertions, deletions, and searches.
+
+Properties:
+A B-tree is a balanced M-way tree.B-tree of order M has following properties:
+1-> It should be perfectly balanced i.e every leaf node is at the same level.
+2->Each node (except the root node) contains the minimum ceil(M/2)[Greatest integer number] children and maximum M children.
+3->Each node can have one lesser key value than order i.e for a 5 order tree the maximum number of keys for a node can be 4.
+4->Keys are arranged in a defined order within the node.
+5->When a new key is to be inserted into a full node there is split into two nodes and the key with the median value moves to the parent node if there is no parent node a new parent node should be created .
+
+13->Graphs
